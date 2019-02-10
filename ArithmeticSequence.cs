@@ -8,9 +8,12 @@ namespace PadawansTask2
         {
             // put your code here
             // throw new NotImplementedException();
-            int result = (add < 0 || count < 0) ? throw new ArgumentException() :
-                number * count + add * ((count - 1) * count / 2);
-            return result;
+            checked
+            {
+                int result = (count < 0) ? throw new ArgumentException() :
+                    number * count + add * ((count - 1) * count / 2);
+                return result;
+            }
         }
     }
 }
